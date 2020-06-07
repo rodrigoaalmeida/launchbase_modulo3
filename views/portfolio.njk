@@ -1,108 +1,47 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
-<title>Portfolio - Rodrigo Almeida</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Portfolio - Rodrigo Almeida</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 {% endblock %}
 
 {% block content %}
-<div id="wrapper">
-    <h1>Aulas</h1>
-</div>
+    <div id="wrapper">
+        <h1>Aulas</h1>
+    </div>
 
-<section class="cards">
-    <div class="card" id="QTH0HeVxhtU">
-        <div class="card__image-container">
-            <img src="https://img.youtube.com/vi/QTH0HeVxhtU/maxresdefault.jpg" alt="COD helicóptero explodindo">
-        </div>
-        <div class="card__content">
-            <p>COD Warzone detonando um helicóptero</p>
-        </div>
-        <div class="card__info">
-            <p>11 seg</p>
-            <p class="card__price">Free</p>
+    <section class="cards">
+
+        {% for item in items %}
+            <div class="card" id="{{item.id}}">
+                <div class="card__image-container">
+                    <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
+                </div>
+                <div class="card__content">
+                    <p>{{item.title}}</p>
+                </div>
+                <div class="card__info">
+                    <p>{{item.duration}}</p>
+                    <p class="card__price">{{item.price}}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+    </section>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <a class="close-modal">
+                <i class="material-icons">close</i>
+            </a>
+
+            <div class="model-content">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
         </div>
     </div>
 
-    <div class="card" id="OxezL1gCv18">
-        <div class="card__image-container">
-            <img src="https://img.youtube.com/vi/OxezL1gCv18/maxresdefault.jpg" alt="COD warzone 2">
-        </div>
-        <div class="card__content">
-            <p>COD Warzone 2</p>
-        </div>
-        <div class="card__info">
-            <p>15 seg</p>
-            <p class="card__price">Free</p>
-        </div>
-    </div>
-
-    <div class="card" id="-x-3Ej0kSIk">
-        <div class="card__image-container">
-            <img src="https://img.youtube.com/vi/-x-3Ej0kSIk/maxresdefault.jpg" alt="COD Warzone 3">
-        </div>
-        <div class="card__content">
-            <p>COD Warzone 3</p>
-        </div>
-        <div class="card__info">
-            <p>10 seg</p>
-            <p class="card__price">Free</p>
-        </div>
-    </div>
-
-    <div class="card" id="hn-WUgEGgIE">
-        <div class="card__image-container">
-            <img src="https://img.youtube.com/vi/hn-WUgEGgIE/maxresdefault.jpg" alt="COD Warzone 5">
-        </div>
-        <div class="card__content">
-            <p>COD Warzone 5</p>
-        </div>
-        <div class="card__info">
-            <p>10 seg</p>
-            <p class="card__price">Free</p>
-        </div>
-    </div>
-
-    <div class="card" id="PWftVerflKA">
-        <div class="card__image-container">
-            <img src="https://img.youtube.com/vi/PWftVerflKA/maxresdefault.jpg" alt="COD Warzone 6">
-        </div>
-        <div class="card__content">
-            <p>COD Warzone 6</p>
-        </div>
-        <div class="card__info">
-            <p>10 seg</p>
-            <p class="card__price">Free</p>
-        </div>
-    </div>
-
-    <div class="card" id="JmQbomPYjfc">
-        <div class="card__image-container">
-            <img src="https://img.youtube.com/vi/JmQbomPYjfc/maxresdefault.jpg" alt="COD Warzone 8">
-        </div>
-        <div class="card__content">
-            <p>COD Warzone 8</p>
-        </div>
-        <div class="card__info">
-            <p>10 seg</p>
-            <p class="card__price">Free</p>
-        </div>
-    </div>
-</section>
-
-<div class="modal-overlay">
-    <div class="modal">
-        <a class="close-modal">
-            <i class="material-icons">close</i>
-        </a>
-
-        <div class="model-content">
-            <iframe src="" frameborder="0"></iframe>
-        </div>
-    </div>
-</div>
-
-<script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 
 {% endblock %}
