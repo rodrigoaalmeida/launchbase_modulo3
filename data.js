@@ -3,7 +3,8 @@ module.exports = [
         id: "QTH0HeVxhtU",
         title: "COD Warzone detonando um helicóptero",
         duration: "11 seg",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
     {
         id: "OxezL1gCv18",
@@ -15,7 +16,8 @@ module.exports = [
         id: "-x-3Ej0kSIk",
         title: "COD Warzone 3",
         duration: "10 seg",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
     {
         id: "hn-WUgEGgIE",
@@ -33,6 +35,7 @@ module.exports = [
         id: "JmQbomPYjfc",
         title: "COD Warzone 8",
         duration: "10 seg",
-        price: "Free"
+        price: "Free",
+        featured: true
     }
 ]
